@@ -41,8 +41,8 @@ header h3 {
 }
 header img {
 	float: left;
-	padding-left: calc(1px *100/960);
-	padding-right: calc(1px *100/960);
+	padding-left: calc(1px *100% /960);
+	padding-right: calc(1px *100%/960);
 }
 .shadow {
 	text-shadow: 2px 2px 2px #800000;
@@ -59,7 +59,7 @@ header img {
 }
 #nav_menu ul li a {
     display: block;
-    width: calc(128px *100 /960);
+    width: calc(128px *100% /960);
     text-align: center;
     padding: 1em 0;
     text-decoration: none;
@@ -171,4 +171,8 @@ footer p {
 	text-align: center;
 	color: white;
 	padding: 1em 0;
+}
+
+@media only screen and (min-width: 768px){
+
 }
