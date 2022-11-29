@@ -190,4 +190,22 @@ footer p {
 
 @media only viewport and (min-width: 768px){
 
+	header img{
+		float: none;
+		max-width: 130%;
+	}
+	header{
+		text-align: center;
+	}
+	section{
+		float: none;
+		width: 95.833%;
+
+	}
+	aside{
+		float: none;
+		width: 95.833%;
+	}
+
+
 }
