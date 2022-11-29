@@ -187,3 +187,7 @@ footer p {
 		font-size: 110%
 	}
 }
+
+@media only viewport and (min-width: 768px){
+
+}
