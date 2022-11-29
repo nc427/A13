@@ -41,7 +41,8 @@ header h3 {
 }
 header img {
 	float: left;
-	padding: 0 30px;
+	padding-left: calc(1px *100/960);
+	padding-right: calc(1px *100/960);
 }
 .shadow {
 	text-shadow: 2px 2px 2px #800000;
@@ -58,7 +59,7 @@ header img {
 }
 #nav_menu ul li a {
     display: block;
-    width: 160px;
+    width: calc(128px *100 /960);
     text-align: center;
     padding: 1em 0;
     text-decoration: none;
@@ -91,7 +92,8 @@ header img {
 section {
 	width: calc(525px *100% /960);
 	float: right;
-	padding: 0 20px 20px 20px;
+	padding-left: calc(20px *100/960);
+	padding-right: calc(20px *100/960);
 }
 section h1 {
 	font-size: 150%;
@@ -139,7 +141,7 @@ article img {
 
 /* the styles for the aside */
 aside {
-	width: 215px;
+	width: calc(215px *100% /960);
 	float: right;
 	padding: 0 0 20px 20px;
 }
