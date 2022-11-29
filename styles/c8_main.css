@@ -174,5 +174,16 @@ footer p {
 }
 
 @media only screen and (min-width: 768px){
-
+	aside h2 a{
+		font-size: 85%;
+	}
+	section h1{
+		font-size: 125%;
+	}
+	section h2{
+		font-size: 110%
+	}
+	aside h2{
+		font-size: 110%
+	}
 }
