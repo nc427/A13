@@ -8,12 +8,12 @@ html {
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
-    width: 98%;
+	font-size: 100%;
+	width: 98%;                     /* changed from 800 pixels */
 	max-width: 960px;
-    margin: 0 auto;
-    border: 3px solid #931420;
-    background-color: #fffded;
+	margin: 0 auto;
+	border: 3px solid #931420;
+	background-color: #fffded;
 }
 a:focus, a:hover {
 	font-style: italic;
@@ -22,14 +22,8 @@ a:focus, a:hover {
 header {
 	padding: 1.5em 0 2em 0;
 	border-bottom: 3px solid #931420;
-		background-image: -moz-linear-gradient(
-	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-	background-image: -webkit-linear-gradient(
-	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
-	background-image: -o-linear-gradient(
-	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 	background-image: linear-gradient(
-	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+			30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 }
 header h2 {
 	font-size: 175%;
@@ -41,8 +35,7 @@ header h3 {
 }
 header img {
 	float: left;
-	padding-left: calc(1px *100% /960);
-	padding-right: calc(1px *100%/960);
+	padding: 0 3.75%;            /* 30 / 800 x 100 */
 }
 .shadow {
 	text-shadow: 2px 2px 2px #800000;
@@ -56,25 +49,25 @@ header img {
 }
 #nav_menu ul li {
 	float: left;
+	width: 20%;                 /* 160 / 800 x 100 */
 }
 #nav_menu ul li a {
-    display: block;
-    width: calc(128px *100% /960);
-    text-align: center;
-    padding: 1em 0;
-    text-decoration: none;
-    background-color: #800000;
-    color: white;
-    font-weight: bold;
+	display: block;
+	text-align: center;
+	padding: 1em 0;
+	text-decoration: none;
+	background-color: #800000;
+	color: white;
+	font-weight: bold;
 }
 #nav_menu a.current {
 	color: yellow;
 }
 #nav_menu ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
 	width: 100%;
+	display: none;
+	position: absolute;
+	top: 100%;
 }
 #nav_menu ul ul li {
 	float: none;
@@ -83,17 +76,20 @@ header img {
 	display: block;
 }
 #nav_menu > ul::after {
-    content: "";
-    clear: both;
-    display: block;
+	content: "";
+	clear: both;
+	display: block;
+}
+/* the styles for the main content */
+main {
+	clear: left;
 }
 
 /* the styles for the section */
 section {
-	width: calc(525px *100% /960);
+	width: 65.625%;                  /* 525 / 800 X 100 */
 	float: right;
-	padding-left: calc(20px *100/960);
-	padding-right: calc(20px *100/960);
+	padding: 0 2.5% 20px 2.5%;       /* 20 / 800 x 100 */
 }
 section h1 {
 	font-size: 150%;
@@ -135,17 +131,17 @@ article h3 {
 }
 article img {
 	float: right;
-	margin: .5em 0 1em 1em;
-	border: 1px solid black;
 	max-width: 40%;
 	min-width: 150px;
+	margin: .5em 0 1em 1em;
+	border: 1px solid black;
 }
 
 /* the styles for the aside */
 aside {
-	width: calc(215px *100% /960);
+	width: 26.875%;                     /* 215 / 800 x 100 */
 	float: right;
-	padding: 0 0 20px 20px;
+	padding: 0 0 20px 2.5%;             /* 20 / 800 x 100 */
 }
 aside h2 {
 	color: #800000;
@@ -172,40 +168,50 @@ footer p {
 	color: white;
 	padding: 1em 0;
 }
+#mobile_menu {
+	display: none;
+}
 
-@media only screen and (min-width: 768px){
-	aside h2 a{
+
+@media only screen and (max-width: 734px) {
+	section h1 {
+		font-size: 125%
+	}
+	section h2, aside h2 {
+		font-size: 110%;
+	}
+	aside h3 a {
 		font-size: 85%;
-	}
-	section h1{
-		font-size: 125%;
-	}
-	section h2{
-		font-size: 110%
-	}
-	aside h2{
-		font-size: 110%
 	}
 }
 
-@media only viewport and (min-width: 768px){
-
-	header img{
+@media only screen and (max-width: 648px) {
+	header img { float: none; }
+	header { text-align: center; }
+	section {
 		float: none;
-		max-width: 130%;
+		width: 95%;
 	}
-	header{
-		text-align: center;
-	}
-	section{
+	aside {
 		float: none;
-		width: 95.833%;
-
+		padding-right: 2.5%;
+		width: 95%;
 	}
-	aside{
-		float: none;
-		width: 95.833%;
+	article img { max-width: 30%; }
+	#speakers {
+		column-count: 2;
 	}
+	#nav_menu {
+		display: none;
+	}
+	#mobile_menu {
+		display: block;
+	}
+	.slicknav_menu {
+		background-color: #800000;
+	}
+}
 
-
+@media only screen and (max-width: 414px) {
+	body { font-size: 90%; }
 }
